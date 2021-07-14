@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+</head>
+<style>
+    div#main {
+        width: 300px;
+        margin: auto;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    textarea#man-hinh {
+        width: 100%;
+    }
+
+    input#man-hinh-phu {
+        width: 100%!important;
+    }
+</style>
+<body>
+    <div id="main">
+        <h3>ATM</h3>
+        <textarea id="man-hinh" cols="30" rows="10" placeholder="Chào mừng bạn đến NH TTR" disabled></textarea>
+        <br>
+        <input type="text" id="man-hinh-phu" disabled style="width:250px"> 
+        <br>
+        <br>
+        <button id='check-card' onclick="checkCard()">Đưa thẻ vào đây</button>
+        <div id="tinh-nang" style="display:none">
+            <button onclick="inputMoney()">Nạp tiền</button>
+            <button onclick="drawMoney()">Rút tiền</button>
+            <button onclick="checkMoney()">Kiểm tra số dư</button>
+            <button onclick="quitAtm()">Thoát</button>
+        </div>
+    </div>
+    
+    <script>
+        // let seri = '00302930102';
+        let user = 'Hoàng Thị Ninh';
+        let password = '19001001';
+        let money = 50000000;
+        // let atm = [user,password,money];
+
+        //Kiểm tra thẻ ATM
+        function checkCard(){
+            let pwd = prompt('Vui lòng nhập mật khẩu',password);
+            if(pwd == password){
+                alert('Đăng nhập thành công');
+                document.getElementById('man-hinh').innerHTML = 'Chào mừng '+user+' đã đăng nhập. Vui lòng chọn tính năng!';
+                document.getElementById('tinh-nang').style.display = 'block';
+                document.getElementById('check-card').style.display = 'none';
+                checkMoney();
+            }else{
+                alert("Sai mật khẩu vui lòng nhập lại");
+            }
+        }
+
+        //Kiểm tra số dư
+        function checkMoney(){
+            document.getElementById('man-hinh-phu').value = "Số dư tài khoản: "+money;
+        }
+
+        //Rút tiền
+        function drawMoney() {
+            let value = +prompt("Nhập số tiền bạn muốn rút");
+            alert('Đang xử lý giao dịch, vui lòng chờ trong giây lát');
+            if(value > money){
+                alert('Số dư tài khoản không đủ! Vui lòng nhập lại');
+            }else{
+                money-=value;
+                alert('Rút tiền thành công! bạn nhận được '+value+'đ');
+                checkMoney();
+                checkContinue();
+            }
+        }
+
+        //Nạp tiền
+        function inputMoney() {
+            let value = +prompt("Nhập số tiền bạn muốn nạp");
+            money += value;
+            checkMoney();
+            alert('Bạn nạp thành công số tiền là '+value);
+        }
+
+        //Tiếp tục giao dịch
+        function checkContinue() {
+            let action = confirm("Bạn có muốn tiếp tục không?");
+            if(action == false){
+                quitAtm();
+            }
+        }
+
+        //Thoát
+        function quitAtm() {
+            alert('Vui lòng nhận lại thẻ!');
+            document.getElementById('man-hinh').innerHTML = '';
+            document.getElementById('man-hinh-phu').value = '';
+            document.getElementById('tinh-nang').style.display = 'none';
+            document.getElementById('check-card').style.display = 'block';
+        }
+    </script>
+</body>
+</html>

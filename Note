@@ -1,0 +1,70 @@
+B1 - Mở cửa máy giặt
+B2 - Cho quần áo vào
+B3 - Cho bột giặt với nước xả
+B4 - Bật máy giặt
+B5 - Chọn chế độ giặt
+B6 - Start
+
+*--------------------------
+- .......
+*--------------------------
+
+Result: Quần áo đã được giặt sạch
+
+Hàm:
+Hàm là nhận giá trị đầu vào, xử lý và cho ra kết quả
+Tập hợp các câu lệnh để giải quyết 1 vấn đề
+
+Tham số: biến của hàm
+Đối giá: giá trị thực tế của tham số truyền vào khi mình sử dụng hàm
+return:
+    - Kết thúc hàm;
+    - Có thể đem theo giá trị hoặc không
+
+- Ứng dụng ATM.
+
+    - Đưa thẻ ATM vào máy;
+    - Máy đọc thông tin thẻ và yêu cầu nhập mã PIN của thẻ;
+    - Nhập mã PIN;
+    - Máy kiểm tra mã PIN:
+    -> Nếu sai: trả thẻ lại;
+    -> Nếu đúng: xử lý việc tiếp theo (bên dưới);
+    - Máy hiện các chức năng cho người sử dụng (kiểm tra stk, rút tiền...);
+    - Người dùng chọn chức năng sử dụng;
+    - Máy xử lý giao dịch và trả kết quả;
+    - B3: kiểm tra số tiền cần rút (TR) với số dư (SD) tài khoản.
+    - B4: Nếu TR <= SD -> cho phép rút. Ngược lại thông báo số dư còn lại k đủ
+    - Máy hỏi có sử dụng giao dịch khác không?
+    -> Nếu có: tiếp tục;
+    -> Nếu không: nhả thẻ và kết thúc.
+
+- Mỗi hàm chỉ được làm 1 việc
+- Trong hàm này có thể gọi được hàm kia
+- Tên hàm phải là động từ
+- Khai báo hàm bằng từ khoá function
+- Hàm có khả năng tái sử dụng và mở rộng chương trình dễ dàng hơn
+
+Chương trình:
+Ninh: máy bán nước tự động
+
+Hiếu: Máy bán đồ ăn tự động
+
+Phát: đồng hồ,đếm giờ, bấm giờ..
+
+Phúc: Thẻ ra vào bãi gửi xe
+
+Luân:
+làm 1 website bán hàng.
+- trang cho người dùng: 
++ đăng nhập tài khoảng người mua.
++ hiện thị sảng phẩm.
++ thêm hàng vào giỏ hàng.
++ thanh toán.
+- trang adim
++ thêm sản phẩm vào trang người dùng.
++ quản lý user người dùng.
++ quản lý số lượng mặt hàng.
++ quản lý sản phẩm đc mua.
+
+Mỹ:Đồng hồ bám giờ
+3 tính năng: Start, Stop, Pause

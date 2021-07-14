@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = 5;
+        let b = 10;
+
+        
+        function tinhTong(){
+            let result = a + b;
+            alert(result);
+        }
+
+
+        function tinhTong(a, b){  //( đầu vào )
+            //Xử lý trong hàm tính toán result
+            let result = a + b;
+            return result; //( Đầu ra )
+        } 
+
+        // let kq = tinhTong(10,16);
+        // console.log(kq);
+
+        function getAge(year){ // year: input - khai báo tham số
+            let ngayHienTai = new Date(); // lấy ra thời gian hiện theo h trên hệ thống
+            console.log(ngayHienTai.getFullYear());
+            let age = ngayHienTai.getFullYear() - year;
+            // return;
+            return age; // Giá trị trả về khi gọi hàm
+        }
+
+        let nam = +prompt("Nhập năm sinh");
+        let tuoi = getAge(nam) // Truyền vào giá trị thực tế tham số - đối số
+        let str = "Bạn đã "+ tuoi + " tuổi";
+        alert(str);
+
+    </script>
+</body>
+</html>
